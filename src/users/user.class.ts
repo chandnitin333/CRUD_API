@@ -7,11 +7,11 @@ export class userClass {
 
     static getAllUser = async (req, res) => {
         try {
-            const items: User[] = await UserService.findAll();
-            if (Object(items).length <= 0) {
-                return res.status(404).send({ items });
+            const users: User[] = await UserService.findAll();
+            if (Object(users).length <= 0) {
+                return res.status(404).send({ users });
             }
-            return res.status(200).json(items);
+            return res.status(200).json(users);
         } catch (err) {
             return res.status(500).send(err.message);
         }
@@ -24,9 +24,9 @@ export class userClass {
             return res.status(400).send("userId is invalid");
         }
         try {
-            const item: User = await UserService.find(id);
-            if (item) {
-                return res.status(200).send(item);
+            const user: User = await UserService.find(id);
+            if (user) {
+                return res.status(200).send(user);
             }
             return res.status(404).send("userId doesn't exist");
         } catch (err) {
