@@ -24,7 +24,7 @@ export const create = async (newUser: UserDetails): Promise<User> => {
         id,
         ...newUser,
     };
-
+    console.log(users)
     return users[id];
 };
 
@@ -43,13 +43,15 @@ export const update = async (
     return users[id];
 };
 
-export const remove = async (id: string): Promise<null | void> => {
+export const remove = async (id: string): Promise<boolean> => {
     const user = await find(id);
     if (!user) {
-        return null;
+        return false;
     }
 
     delete users[id];
+
+    return true;
 
 
 };
