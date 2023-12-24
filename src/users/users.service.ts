@@ -24,7 +24,7 @@ export const create = async (newUser: UserDetails): Promise<User> => {
         id,
         ...newUser,
     };
-    console.log(users)
+    
     return users[id];
 };
 
