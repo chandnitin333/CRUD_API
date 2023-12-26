@@ -1,8 +1,5 @@
 
-import { Request, Response } from "express";
 import { Router } from "express";
-import * as UserService from "./users.service";
-import { UserDetails, User } from "./user.interface";
 import { userClass } from "./user.class"
 
 export const userRouter = Router();
